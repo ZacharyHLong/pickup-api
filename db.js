@@ -17,3 +17,27 @@ catch (err) {
     console.log(err)
 }
 
+// State schema
+const stateSchema = new mongoose.Schema({
+    name: { type: String, required: true }
+})
+
+// State Model
+const StateModel = mongoose.model('State', stateSchema)
+
+// Court Schema
+const courtSchema = new mongoose.Schema({
+    address: { type: String, required: true },
+    city: { type: String, required: true },
+    state: { type: mongoose.ObjectId, ref: 'State', required: true },
+    description: { type: String, required: false }
+
+})
+
+// Court Model
+const CourtModel = mongoose.model('Court', courtSchema)
+
+
+
+
+export { StateModel, CourtModel, dbClose }
