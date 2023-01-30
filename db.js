@@ -17,6 +17,9 @@ catch (err) {
     console.log(err)
 }
 
+
+
+
 // State schema
 const stateSchema = new mongoose.Schema({
     name: { type: String, required: true }
@@ -31,12 +34,14 @@ const courtSchema = new mongoose.Schema({
     city: { type: String, required: true },
     state: { type: mongoose.ObjectId, ref: 'State', required: true },
     description: { type: String, required: false }
-
 })
 
 // Court Model
 const CourtModel = mongoose.model('Court', courtSchema)
 
+// Game schema
+// const gameSchema = new mongoose.Schema({
+//     court
 
 
 
