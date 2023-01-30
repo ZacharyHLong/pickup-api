@@ -3,10 +3,10 @@ import { GameModel } from '../db.js'
 
 const router = express.Router()
 
-// test routes, replace later
+// gets all games
 router.get('/', async (req, res) => res.send(await GameModel.find().populate({ path: 'state', select: 'name' })))
 
-// get
+// gets single game from its game id
 router.get('/:id', async (req, res) => {
     try {
         const game = await GameModel.findById(req.params.id).populate({ path: 'state', select: 'name' })
@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-// post
+// posts a single game
 router.post('/', async (req, res) => {
     const { address, state, time, date, skillLevel, description } = req.body
     const newGame = { address, state, time, date, skillLevel, description }
