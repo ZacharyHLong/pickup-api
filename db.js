@@ -30,6 +30,7 @@ const StateModel = mongoose.model('State', stateSchema)
 
 // Court Schema
 const courtSchema = new mongoose.Schema({
+    name: { type: String, required: true },
     address: { type: String, required: true },
     city: { type: String, required: true },
     state: { type: mongoose.ObjectId, ref: 'State' },
@@ -41,7 +42,9 @@ const CourtModel = mongoose.model('Court', courtSchema)
 
 // Game schema (double check date type, and potentially ref courts [would mean courts must be registered first])
 const gameSchema = new mongoose.Schema({
+    title: { type: String, required: true },
     address: { type: String, required: true },
+    city: { type: String, required: true },
     state: { type: mongoose.ObjectId, ref: 'State' },
     time: { type: String, required: true },
     date: { type: Date, required: true },
