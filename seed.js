@@ -1,7 +1,5 @@
 import { CourtModel, GameModel, dbClose } from './db.js'
 
-await StateModel.deleteMany()
-console.log('States deleted')
 await CourtModel.deleteMany()
 console.log('Courts deleted')
 await GameModel.deleteMany()
