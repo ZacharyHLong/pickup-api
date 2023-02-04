@@ -4,12 +4,12 @@ import { CourtModel } from '../db.js'
 const router = express.Router()
 
 // test routes, replace later
-router.get('/', async (req, res) => res.send(await CourtModel.find().populate({ path: 'state', select: 'name' })))
+router.get('/', async (req, res) => res.send(await CourtModel.find()))
 
 // get
 router.get('/:id', async (req, res) => {
     try {
-        const court = await CourtModel.findById(req.params.id).populate({ path: 'state', select: 'name' })
+        const court = await CourtModel.findById(req.params.id)
         if (court) {
             res.send(court)
         } else {

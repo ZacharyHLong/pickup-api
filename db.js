@@ -20,20 +20,12 @@ catch (err) {
 
 
 ////////////////////////////////////////////////////////////////
-// State schema
-const stateSchema = new mongoose.Schema({
-    name: { type: String, required: true }
-})
-
-// State Model
-const StateModel = mongoose.model('State', stateSchema)
-
 // Court Schema
 const courtSchema = new mongoose.Schema({
     name: { type: String, required: true },
     address: { type: String, required: true },
     city: { type: String, required: true },
-    state: { type: mongoose.ObjectId, ref: 'State' },
+    state: { type: String, required: true },
     description: { type: String, required: false }
 })
 
@@ -45,7 +37,7 @@ const gameSchema = new mongoose.Schema({
     title: { type: String, required: true },
     address: { type: String, required: true },
     city: { type: String, required: true },
-    state: { type: mongoose.ObjectId, ref: 'State' },
+    state: { type: String, required: true },
     time: { type: String, required: true },
     date: { type: Date, required: true },
     skillLevel: { type: String, required: true },
@@ -57,7 +49,4 @@ const GameModel = mongoose.model('Game', gameSchema)
 
 
 
-
-
-
-export { StateModel, CourtModel, GameModel, dbClose }
+export { CourtModel, GameModel, dbClose }

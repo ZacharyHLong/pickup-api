@@ -4,12 +4,12 @@ import { GameModel } from '../db.js'
 const router = express.Router()
 
 // gets all games
-router.get('/', async (req, res) => res.send(await GameModel.find().populate({ path: 'state', select: 'name' })))
+router.get('/', async (req, res) => res.send(await GameModel.find()))
 
 // gets single game from its game id
 router.get('/:id', async (req, res) => {
     try {
-        const game = await GameModel.findById(req.params.id).populate({ path: 'state', select: 'name' })
+        const game = await GameModel.findById(req.params.id)
         if (game) {
             res.send(game)
         } else {
