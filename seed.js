@@ -24,13 +24,13 @@ await CourtModel.insertMany(courts)
 console.log('Courts inserted')
 
 const games = [
-    { title: 'Anyones game!', address: '123 Hoop St', city: 'Bondi', state: 'NSW', time: '12:00', date: '2023-15-02', skillLevel: "Anyone's welcome", description: 'first game' },
-    { title: 'Looking for 5s', address: '106B Victoria St', city: 'West End', state: 'QLD', date: '2023-10-02', skillLevel: "Anyone's welcome", description: 'Hoop time' },
-    { title: "Game", address: '22-28 Whitemore Square', city: 'Adelaide', state: 'SA', time: '18:00', date: '2023-14-02', skillLevel: 'Beginner', description: 'game' },
-    { title: "Shootaround practice", address: '111 Carlton St', city: 'Carlton', state: 'VIC', date: '2023-28-02', skillLevel: 'Intermediate', description: 'Just wanting to shootaround with some other hoopers' },
-    { title: "Prahran classic", address: '244-288 Malvern Rd', city: 'Prahran', state: 'VIC', date: '2023-12-02', skillLevel: 'Beginner', description: 'regulary scheduled game' },
-    { title: "3v3 Pickup", address: '456 Basket St', city: 'Abbotsford', state: 'VIC', time: '18:00', date: '2023-06-02', skillLevel: 'Advanced', description: 'Only looking for really good hoopers' },
-    { title: "Matt's Game", address: '111 Carlton St', city: 'Carlton', state: 'VIC', date: '2023-08-02', skillLevel: "Anyone's welcome", description: 'what is basketball lol' }
+    { title: 'Anyones game!', address: '123 Hoop St', city: 'Bondi', state: 'NSW', time: '12:00', date: '2023-02-16', skillLevel: "Anyone's welcome", description: 'first game' },
+    { title: 'Looking for 5s', address: '106B Victoria St', city: 'West End', state: 'QLD', time: '06:00', date: '2023-02-13', skillLevel: "Anyone's welcome", description: 'Hoop time' },
+    { title: "Game", address: '22-28 Whitemore Square', city: 'Adelaide', state: 'SA', time: '18:00', date: '2023-02-22', skillLevel: 'Beginner', description: 'game' },
+    { title: "Shootaround practice", address: '111 Carlton St', city: 'Carlton', state: 'VIC', time: '12:15', date: '2023-02-21', skillLevel: 'Intermediate', description: 'Just wanting to shootaround with some other hoopers' },
+    { title: "Prahran classic", address: '244-288 Malvern Rd', city: 'Prahran', state: 'VIC', time: '16:00', date: '2023-02-28', skillLevel: 'Beginner', description: 'regulary scheduled game' },
+    { title: "3v3 Pickup", address: '456 Basket St', city: 'Abbotsford', state: 'VIC', time: '18:00', date: '2023-02-20', skillLevel: 'Advanced', description: 'Only looking for really good hoopers' },
+    { title: "Matt's Game", address: '111 Carlton St', city: 'Carlton', state: 'VIC', time: '09:30', date: '2023-02-15', skillLevel: "Anyone's welcome", description: 'what is basketball lol' }
 ]
 
 await GameModel.insertMany(games)
