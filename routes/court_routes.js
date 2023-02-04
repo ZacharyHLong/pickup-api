@@ -23,12 +23,11 @@ router.get('/:id', async (req, res) => {
 
 // post
 router.post('/', async (req, res) => {
-    const { address, city, state, description } = req.body
-    const newCourt = { address, city, state, description }
-
     try {
-        const court = await CourtModel.create(newCourt)
-        res.send(court)
+    const { name, address, city, state, description } = req.body
+    const newCourt = { name, address, city, state, description }
+    const insertedCourt = await CourtModel.create(newCourt)
+    res.status(201).send(insertedCourt.populate)  
     }
     catch (err) {
         res.status(500).send({ error: err.message })
