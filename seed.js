@@ -30,7 +30,14 @@ const games = [
     { title: "Shootaround practice", address: '111 Carlton St', city: 'Carlton', state: 'VIC', time: '12:15', date: '2023-02-21', skillLevel: 'Intermediate', description: 'Just wanting to shootaround with some other hoopers' },
     { title: "Prahran classic", address: '244-288 Malvern Rd', city: 'Prahran', state: 'VIC', time: '16:00', date: '2023-02-28', skillLevel: 'Beginner', description: 'regulary scheduled game' },
     { title: "3v3 Pickup", address: '456 Basket St', city: 'Abbotsford', state: 'VIC', time: '18:00', date: '2023-02-20', skillLevel: 'Advanced', description: 'Only looking for really good hoopers' },
-    { title: "Matt's Game", address: '111 Carlton St', city: 'Carlton', state: 'VIC', time: '09:30', date: '2023-02-15', skillLevel: "Anyone's welcome", description: 'what is basketball lol' }
+    { title: "Matt's Game", address: '111 Carlton St', city: 'Carlton', state: 'VIC', time: '09:30', date: '2023-02-15', skillLevel: "Anyone's welcome", description: 'what is basketball lol' },
+    { title: 'Afternoon Delight', address: '54 Playground Ave', city: 'Surrey Hills', state: 'NSW', time: '14:00', date: '2023-02-17', skillLevel: 'Intermediate', description: 'Come play with us' },
+    { title: 'Beginner Friendly', address: '33 Basketball Court', city: 'Brisbane', state: 'QLD', time: '08:00', date: '2023-02-14', skillLevel: 'Beginner', description: 'First timers welcome' },
+    { title: "Midnight Run", address: '444 Night Court', city: 'Sydney', state: 'NSW', time: '23:00', date: '2023-02-12', skillLevel: 'Intermediate', description: 'Night hoopers unite' },
+    { title: "Sunday Shootout", address: '244-288 Malvern Rd', city: 'Prahran', state: 'VIC', time: '10:30', date: '2023-02-13', skillLevel: 'Advanced', description: 'Serious hoopers only' },
+    { title: "Charity Game", address: '666 Giving Blvd', city: 'Adelaide', state: 'SA', time: '13:00', date: '2023-02-19', skillLevel: "Anyone's Welcome", description: 'Playing for a cause' },
+    { title: "Women's Game", address: '777 Lady Lane', city: 'Perth', state: 'WA', time: '15:00', date: '2023-02-18', skillLevel: 'Beginner', description: 'Ladies only hoop session' },
+    { title: "Early Bird Special", address: '888 Sunrise Dr', city: 'Brisbane', state: 'QLD', time: '06:00', date: '2023-02-20', skillLevel: 'Advanced', description: 'Rise and shine hoopers' }
 ]
 
 await GameModel.insertMany(games)
