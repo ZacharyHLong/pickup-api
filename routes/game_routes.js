@@ -23,12 +23,11 @@ router.get('/:id', async (req, res) => {
 
 // posts a single game
 router.post('/', async (req, res) => {
-    const { address, state, time, date, skillLevel, description } = req.body
-    const newGame = { address, state, time, date, skillLevel, description }
-
     try {
-        const game = await GameModel.create(newGame)
-        res.send(game)
+    const { title, address, city, state, time, date, skillLevel, description } = req.body
+    const newGame = { title, address, city, state, time, date, skillLevel, description }
+    const insertedGame = await GameModel.create(newGame)
+    res.status(201).send(insertedGame)
     }
     catch (err) {
         res.status(500).send({ error: err.message })
