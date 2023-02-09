@@ -37,8 +37,8 @@ router.post('/', async (req, res) => {
 
 // put
 router.put('/:id', async (req, res) => {
-    const { address, state, time, date, skillLevel, description } = req.body
-    const newGame = { address, state, time, date, skillLevel, description }
+    const { title, address, state, time, date, skillLevel, description, participants } = req.body
+    const newGame = { title, address, state, time, date, skillLevel, description, participants }
 
     try {
         game = await GameModel.findByIdAndUpdate(req.params.id, newGame, { returnDocument: 'after' })
