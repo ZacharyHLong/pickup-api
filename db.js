@@ -41,7 +41,8 @@ const gameSchema = new mongoose.Schema({
     time: { type: String, required: true },
     date: { type: Date, required: true },
     skillLevel: { type: String, required: true },
-    description: { type: String, required: false }
+    description: { type: String, required: false },
+    participants: { type: Number, required: false, default: 0 }
 })
 
 // Game Model
