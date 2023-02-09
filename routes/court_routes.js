@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
     const { name, address, city, state, description } = req.body
     const newCourt = { name, address, city, state, description }
     const insertedCourt = await CourtModel.create(newCourt)
-    res.status(201).send(insertedCourt.populate)  
+    res.status(201).send(insertedCourt)  
     }
     catch (err) {
         res.status(500).send({ error: err.message })
@@ -45,7 +45,7 @@ router.put('/:id', async (req, res) => {
         if (court) {
             res.send(court)
         } else {
-            res.status(404).send({ error: 'Court not found' })
+            res.status(404).json({ error: 'Court not found' })
         }
     } 
     catch (err) {
