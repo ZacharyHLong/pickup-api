@@ -58,7 +58,7 @@ router.delete('/:id', async (req, res) => {
     try {
         const court = await CourtModel.findByIdAndDelete(req.params.id)
         if (court) {
-            res.sendStatus(204)
+            res.status(200).send({ message: 'Court deleted' })
         } else {
             res.status(404).send({ error: 'Court not found' })
         }
