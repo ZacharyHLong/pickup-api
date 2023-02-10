@@ -59,7 +59,7 @@ router.delete('/:id', async (req, res) => {
     try {
         const game = await GameModel.findByIdAndDelete(req.params.id)
         if (game) {
-            res.sendStatus(200).send({ message: 'Game deleted' })
+            res.status(200).send({ message: 'Game deleted' })
         } else {
             res.status(404).send({ error: 'Game not found' })
         }
