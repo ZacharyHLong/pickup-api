@@ -5,7 +5,10 @@ import gameRoutes from './routes/game_routes.js'
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin: 'https://pickup-basketball.up.railway.app/', 
+  allowedHeaders: 'Content-Type,Authorization',
+}))
 
 app.use(express.json())
 
