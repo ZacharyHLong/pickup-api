@@ -37,19 +37,19 @@ router.post('/', async (req, res) => {
 
 // put
 router.put('/:id', async (req, res) => {
-    let game
-    const { title, address, state, time, date, skillLevel, description, participants } = req.body
-    const newGame = { title, address, state, time, date, skillLevel, description, participants }
-
+    const { participants } = req.body;
     try {
-        game = await GameModel.findByIdAndUpdate(req.params.id, newGame, { returnDocument: 'after' })
-        if (game) {
-            res.send(game)
+        const updatedGame = await GameModel.findByIdAndUpdate(
+            req.params.id,
+            { $set: { participants } },
+            { new: true }
+        )
+        if (updatedGame) {
+            res.send(updatedGame)
         } else {
-            res.status(404).send({ error: 'Game not found' })
+            res.status(404).send({ error: 'Game not found' });
         }
-    } 
-    catch (err) {
+    } catch (err) {
         res.status(500).send({ error: err.message })
     }
 })
