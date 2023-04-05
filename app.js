@@ -6,8 +6,7 @@ import gameRoutes from './routes/game_routes.js'
 const app = express()
 
 app.use(cors({
-    origin: 'https://pickup-basketball.up.railway.app/', 
-  allowedHeaders: 'Content-Type,Authorization',
+ origin: '*'
 }))
 
 app.use(express.json())
